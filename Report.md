@@ -33,7 +33,7 @@ The detail DDPG algorithm are as follows :
 
 #### Dealing with unstable learning
 
-One of the biggest problem in reinforcement learning is its unstable learning. There're several techniques  used in this project DDPG implementation :
+One of the biggest problem in reinforcement learning is its unstable learning. There're several techniques  used in this project's DDPG implementation :
 
 - **Experience replay using memory buffer**：Similar to DQN, DDPG also uses memory buffer to store several experience tuples with state, action, reward and next state `(s, a, r, s')`, and sample it randomly for learning to avoid sequential experience correlation.
 - **Fixed target**：Similar to DQN, it's unstable to train model with moving target. Therefore, both DDPG actor and DDPG critic have their own pairs of local network and target network. 
@@ -79,10 +79,10 @@ Key hyperparameters in this DDPG implementation are shown as follows :
 
 | Hyperparameter      | Value    | Meaning                                                 |
 | ------------------- | -------- | ------------------------------------------------------- |
-| n_episodes          | 300      | total max number of training episodes                   |
+| n_episodes          | 1000     | total max number of training episodes                   |
 | max_t               | 1000     | total max number of steps in one episode                |
 | BUFFER_SIZE         | int(1e6) | replay buffer size                                      |
-| BATCH_SIZE          | 1024     | minibatch size sampled from replay buffer               |
+| BATCH_SIZE          | 128      | minibatch size sampled from replay buffer               |
 | GAMMA               | 0.99     | discount factor                                         |
 | TAU                 | 1e-3     | for soft update of target parameters                    |
 | LR_ACTOR            | 1e-4     | learning rate of the actor                              |
