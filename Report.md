@@ -2,7 +2,6 @@
 
 [image1]: https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif "Trained Agent"
 [image2]: ./Report.assets/ddpg.png
-[image3]: ./Report.assets/architecture.png
 [image4]: ./Report.assets/reward.png
 
 
@@ -46,10 +45,6 @@ One of the biggest problem in reinforcement learning is its unstable learning. T
 
 #### DDPG Neural Network Architecture 
 
-Architecture of actor and critic neural networks are illustrated as follows : 
-
-![architecture][image]
-
 The actor consists of 3 fully connected layer with 256, 128 and 4 units, respectively. The first two fully connected layers are followed with a ReLU nonlinear activation function and final fully connected layer is followed with tanh activation function. The actor takes state (size = 33) as input and output action (size=4).
 
 | Actor        | Input size | Output size |
@@ -82,7 +77,7 @@ Key hyperparameters in this DDPG implementation are shown as follows :
 | n_episodes          | 500      | total max number of training episodes                   |
 | max_t               | 1000     | total max number of steps in one episode                |
 | BUFFER_SIZE         | int(1e7) | replay buffer size                                      |
-| BATCH_SIZE          | 128      | minibatch size sampled from replay buffer               |
+| BATCH_SIZE          | 1024     | minibatch size sampled from replay buffer               |
 | GAMMA               | 0.99     | discount factor                                         |
 | TAU                 | 1e-3     | for soft update of target parameters                    |
 | LR_ACTOR            | 1e-4     | learning rate of the actor                              |
@@ -98,13 +93,11 @@ Key hyperparameters in this DDPG implementation are shown as follows :
 
 ### Plot of Rewards
 
-In this DDPG implementation, the [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment is solved in ??? episodes with average score of +30 over 100 consecutive episodes, and over all agents.
+In this DDPG implementation, the [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment is solved in **366** episodes with average score of 30.01 over 100 consecutive episodes, and over all agents.
 
 The plot of reward in training stage is shown as follows :
 
-![reward][image4]
-
-
+![reward][image4] 
 
 ### Future Work
 

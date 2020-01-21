@@ -85,7 +85,7 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 2. Open jupyter notebook `Continuous_Control.ipynb`
 
-3. Change kernel to `drlnd` in `Navigation.ipynb`
+3. Change kernel to `drlnd` in `Continuous_Control.ipynb`
 
 4. Change environment path in the first code cell, e.g.
 
