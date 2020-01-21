@@ -1,2 +1,8 @@
 
 Reacher20_Linux/
+
+\.ipynb_checkpoints/
+
+__pycache__/
+
+unity-environment\.log

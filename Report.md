@@ -48,28 +48,28 @@ One of the biggest problem in reinforcement learning is its unstable learning. T
 
 Architecture of actor and critic neural networks are illustrated as follows : 
 
-![architecture][image3]
+![architecture][image]
 
-The actor consists of 3 fully connected layer with 600, 400 and 4 units, respectively. The first two fully connected layers are followed with a ReLU nonlinear activation function and final fully connected layer is followed with tanh activation function. The actor takes state (size = 33) as input and output action (size=4).
+The actor consists of 3 fully connected layer with 256, 128 and 4 units, respectively. The first two fully connected layers are followed with a ReLU nonlinear activation function and final fully connected layer is followed with tanh activation function. The actor takes state (size = 33) as input and output action (size=4).
 
 | Actor        | Input size | Output size |
 | ------------ | ---------- | ----------- |
-| Layer1 (fc1) | 33         | 600         |
-| ReLU         | 600        | 600         |
-| Layer2 (fc2) | 600        | 400         |
-| ReLU         | 400        | 400         |
-| Layer3 (fc3) | 400        | 4           |
+| Layer1 (fc1) | 33         | 256         |
+| ReLU         | 256        | 256         |
+| Layer2 (fc2) | 256        | 128         |
+| ReLU         | 128        | 128         |
+| Layer3 (fc3) | 128        | 4           |
 | Tanh         | 4          | 4           |
 
-The critic consists of 3 fully connected layer with 600, 400 and 1 units, respectively. The first two fully connected layers are followed with a ReLU nonlinear activation function. The critic takes state (size = 33) and action (size = 4) as input and output action value (size=1). The first layer takes state as input (size = 33) and the second layer takes action and concatenate it with previous layer output as input (size = 600 + 4).
+The critic consists of 3 fully connected layer with 256, 128 and 1 units, respectively. The first two fully connected layers are followed with a ReLU nonlinear activation function. The critic takes state (size = 33) and action (size = 4) as input and output action value (size=1). The first layer takes state as input (size = 33) and the second layer takes action and concatenate it with previous layer output as input (size = 256 + 4).
 
 | Critic        | Input size | Output size |
 | ------------- | ---------- | ----------- |
-| Layer1 (fcs1) | 33         | 600         |
-| ReLU          | 600        | 600         |
-| Layer2 (fc2)  | 600 + 4    | 400         |
-| ReLU          | 400        | 400         |
-| Layer3 (fc3)  | 400        | 1           |
+| Layer1 (fcs1) | 33         | 256         |
+| ReLU          | 256        | 256         |
+| Layer2 (fc2)  | 256 + 4    | 128         |
+| ReLU          | 128        | 128         |
+| Layer3 (fc3)  | 128        | 1           |
 
 
 
@@ -79,14 +79,14 @@ Key hyperparameters in this DDPG implementation are shown as follows :
 
 | Hyperparameter      | Value    | Meaning                                                 |
 | ------------------- | -------- | ------------------------------------------------------- |
-| n_episodes          | 1000     | total max number of training episodes                   |
+| n_episodes          | 500      | total max number of training episodes                   |
 | max_t               | 1000     | total max number of steps in one episode                |
-| BUFFER_SIZE         | int(1e6) | replay buffer size                                      |
+| BUFFER_SIZE         | int(1e7) | replay buffer size                                      |
 | BATCH_SIZE          | 128      | minibatch size sampled from replay buffer               |
 | GAMMA               | 0.99     | discount factor                                         |
 | TAU                 | 1e-3     | for soft update of target parameters                    |
 | LR_ACTOR            | 1e-4     | learning rate of the actor                              |
-| LR_CRITIC           | 1e-3     | learning rate of the critic                             |
+| LR_CRITIC           | 3e-4     | learning rate of the critic                             |
 | WEIGHT_DECAY        | 0        | L2 weight decay                                         |
 | UPDATE_TIMESTEPS    | 20       | timestep period for updating model                      |
 | MEMORY_SAMPLE_TIMES | 10       | times to learn from replay buffer for each model update |
