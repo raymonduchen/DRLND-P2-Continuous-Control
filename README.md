@@ -1,6 +1,6 @@
 [//]: # "Image References"
 
-[image1]: https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif "Trained Agent"
+[image1]: ./Report.assets/agent_tested.gif "Trained Agent"
 
 # DRLND-P2 : Continuous Control
 
@@ -81,6 +81,8 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 ### Instructions
 
+#### Train agent
+
 1. Activate the conda environment `drlnd` as established in [Udacity deep reinforcement learning repository](https://github.com/udacity/deep-reinforcement-learning)
 
 2. Open jupyter notebook `Continuous_Control.ipynb`
@@ -94,3 +96,20 @@ The environment is considered solved, when the average (over 100 episodes) of th
    ```
 
 5. Execute code cells in `Continuous_Control.ipynb`, and trained model will be saved in `solved_checkpoint_actor.pth` and `solved_checkpoint_critic.pth` as the average score > +30.0.
+
+#### Test agent
+
+1. Activate the conda environment `drlnd` as established in [Udacity deep reinforcement learning repository](https://github.com/udacity/deep-reinforcement-learning)
+
+2. Open jupyter notebook `Continuous_Control_Test.ipynb`
+
+3. Change kernel to `drlnd` in `Continuous_Control_Test.ipynb`
+
+4. Change environment path in the first code cell, e.g.
+
+   ```
+   env = UnityEnvironment('Reacher20_Linux/Reacher.x86_64')   # Linux
+   ```
+
+5. Execute code cells in `Continuous_Control_Test.ipynb`, and the trained model will be tested for 3 times.
+
