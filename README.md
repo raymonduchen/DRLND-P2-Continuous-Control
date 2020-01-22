@@ -113,3 +113,17 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 5. Execute code cells in `Continuous_Control_Test.ipynb`, and the trained model will be tested for 3 times.
 
+#### Note
+
+As a default, twenty agents version is trained in this project, if you would like to train and test using one agent version, only change the environment path from 20 agents' environment to 1 agent's environment in `Continuous_Control.ipynb` and `Continuous_Control_Test.ipynb`, e.g. change the environment path from
+
+```
+env = UnityEnvironment('Reacher20_Linux/Reacher.x86_64')   # 20 agent env path (Linux)
+```
+
+to
+
+```
+env = UnityEnvironment('Reacher1_Linux/Reacher.x86_64')   # 1 agent env path (Linux)
+```
+
