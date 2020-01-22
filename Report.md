@@ -2,6 +2,7 @@
 
 [image1]: ./Report.assets/agent_tested.gif "Trained Agent"
 [image2]: ./Report.assets/ddpg.png
+[image3]: ./Report.assets/architecture.png
 [image4]: ./Report.assets/reward.png
 
 
@@ -44,6 +45,10 @@ One of the biggest problem in reinforcement learning is its unstable learning. T
 
 
 #### DDPG Neural Network Architecture 
+
+The neural network architecture is illustrated as follows :
+
+![][image3]
 
 The actor consists of 3 fully connected layer with 256, 128 and 4 units, respectively. The first two fully connected layers are followed with a ReLU nonlinear activation function and final fully connected layer is followed with tanh activation function. The actor takes state (size = 33) as input and output action (size=4).
 
