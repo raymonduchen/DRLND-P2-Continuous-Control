@@ -93,7 +93,7 @@ Key hyperparameters in this DDPG implementation are shown as follows :
 
 ### Plot of Rewards
 
-In this DDPG implementation, the [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment is solved in **366** episodes with average score of 30.01 over 100 consecutive episodes, and over all agents.
+In this DDPG implementation, the [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment is solved in **245** episodes with average score of 30.01 over 100 consecutive episodes, and over all agents.
 
 The plot of reward in training stage is shown as follows :
 
